@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>Delete Student</title>
+</head>
+<body>
+    <script src="../static/javascript/script.js"></script>
+    <div>
+        <h1 id= "title">Delete Student</h1>
+        <p id= "subtitle">Complete Delete Informations</p>
+        <a href="/templates/formulario.html">Home</a>
+        <a href="/templates/views/update_student.html">Update Student</a>
+    </div>
+    <form method="POST">
+        <fieldset class= "group">
+            <div class= "camp">
+                <label for="id">Id</label>
+                <input type="number" name= "id" id= "id">
+            </div>
+            <br>
+            <div style="display: inline-block;">
+                <button type="delete_student()" class= "button2">Delete Person</button>
+            </div>
+        </fieldset>
+    </form>
+    <section class= "section">
+        <div class= "container">
+            <div class="columns">
+                <div class= "column" id= "divConteudo" style="display: none;">
+                    <div style="padding-top: 2em;">
+                        {% for person in person_data %}
+                        <div style="padding-bottom: 3px;">
+                            <p class="persons">
+                                <span>{{person.name}}</span>
+                                <br>
+                                <span>{{person.turm}}</span>
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button id="btnShowHide" class="buttonShow" type="button" onclick="ChangeState('divConteudo')">Show or Hide</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

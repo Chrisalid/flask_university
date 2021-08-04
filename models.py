@@ -36,7 +36,7 @@ def query_db(sql):
     return regis
 
 
-def insert_delete_db(sql):
+def insert_delete_update_db(sql):
     con = connect_db()
     cur = con.cursor()
 
